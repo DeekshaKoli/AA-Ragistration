@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Astha Agriculture</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(to right, #334155, #06b6d4);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 320px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #334155;
+      margin-bottom: 30px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .student {
+      background: #16a34a;
+    }
+
+    .student:hover {
+      background: #15803d;
+    }
+
+    .admin {
+      background: #f97316;
+    }
+
+    .admin:hover {
+      background: #ea580c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🌾 ASTHA AGRICULTURE</h1>
+
+    <button class="student" onclick="goToStudent()">Student Registration</button>
+
+    <button class="admin" onclick="goToAdmin()">Admin Login</button>
+  </div>
+
+  <script>
+    function goToStudent() {
+      window.location.href = "form.html";
+    }
+
+    function goToAdmin() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
