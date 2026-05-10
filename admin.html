@@ -113,6 +113,14 @@ function logout() {
   localStorage.removeItem("admin");
   window.location.href = "login.html";
 }
+
+function logout() {
+  // admin session remove karo
+  localStorage.removeItem("admin");
+
+  // login page pe redirect
+  window.location.href = "login.html";
+}
 </script>
 
 </body>
