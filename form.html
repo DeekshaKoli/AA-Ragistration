@@ -1,116 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astha Agriculture Form</title>
   <link rel="stylesheet" href="style.css">
   <style>
-body {
+    body {
   margin: 0;
-  font-family: Arial;
-  background: #f3f4f6;
-}
-
-.container {
-  width: 90%;
-  margin: auto;
-  background: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
   padding: 20px;
 }
 
+/* MAIN CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER */
 .header {
+  background: linear-gradient(135deg, #040239, #0b063b);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
-  border: 2px solid green;
-  padding: 15px;
-  border-radius: 10px;
+  gap: 20px;
+  padding: 22px;
+  border-radius: 20px;
   flex-wrap: wrap;
+  color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
+/* LOGO */
 .logo img {
-  width: 80px;
-  height: 80px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.8);
 }
 
+/* TITLE */
 .title {
   text-align: center;
   flex: 1;
 }
 
 .title h1 {
-  color: green;
   margin: 0;
+  font-size: 34px;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
 }
 
+.title p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+/* PHOTO BOX */
 .photo-box {
-  width: 140px;
-  height: 180px;
-  border: 2px dashed gray;
+  width: 150px;
+  height: 190px;
+  border: 2px solid white;
+  border-radius: 14px;
+  background: rgba(249, 246, 246, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 0.3s ease;
 }
 
-.course-bar {
-  background: green;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 10px;
+.photo-box:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.03);
 }
 
-form input, form select {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.row {
-  display: flex;
-  gap: 10px;
-}
-
-.table {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.documents {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.doc-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background: black;
-  color: white;
-  border: none;
-  margin-top: 10px;
+.photo-box label {
+  font-weight: 600;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
-button:hover {
-  background: #333;
+.photo-box input {
+  color: white;
 }
 
+/* FORM TITLE */
+h2 {
+  text-align: center;
+  color: #312e81;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* COURSE BAR */
+.course-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px;
+  background: linear-gradient(135deg, #040239, #0b063b);
+  border-radius: 16px;
+  margin: 20px 0;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.course-bar input[type="radio"] {
+  display: none;
+}
+
+.course-bar label {
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.course-bar label:hover {
+  background: white;
+  color: #4338ca;
+  transform: translateY(-2px);
+}
+
+.course-bar input[type="radio"]:checked + label {
+  background: white;
+  color: #4338ca;
+  font-weight: bold;
+}
+
+/* INPUTS */
+form input,
+form select {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: 0.3s;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 10px rgba(99,102,241,0.25);
+}
+
+/* ROW */
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+/* EDUCATION TABLE */
+.table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* DOCUMENT SECTION */
+.documents {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.doc-box {
+  border: 1px solid #dbe2ea;
+  padding: 18px;
+  border-radius: 16px;
+  background: #f8fafc;
+  transition: 0.3s;
+}
+
+.doc-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.doc-box label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #312e81;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #040239, #0b063b);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  margin-top: 25px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(67,56,202,0.35);
+}
+
+/* SECTION HEADINGS */
+h3 {
+  color: #312e81;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  border-left: 5px solid #6366f1;
+  padding-left: 12px;
+  font-size: 20px;
+}
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
+
   .header {
     flex-direction: column;
     text-align: center;
@@ -130,177 +262,309 @@ button:hover {
 
   .course-bar {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .title h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 18px;
   }
 }
-.course-bar {
+/* DOCUMENT SECTION */
+.documents {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 15px;
+}
+
+/* DOCUMENT BOX */
+.doc-box {
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  padding: 18px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.doc-box:hover {
+  border-color: #6366f1;
+  box-shadow: 0 5px 15px rgba(99,102,241,0.15);
+}
+
+/* LABEL STYLE */
+.doc-box label {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 15px;
-  background: #16a34a;
-  border-radius: 10px;
-  margin: 15px 0;
-  color: white;
-  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 14px;
+  cursor: pointer;
 }
 
-/* HIDE DEFAULT RADIO */
-.course-bar input[type="radio"] {
-  display: none;
+/* CHECKBOX */
+.doc-box input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+  cursor: pointer;
 }
 
-/* LABEL AS BUTTON */
-.course-bar label {
-  padding: 10px 15px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid white;
-  border-radius: 25px;
+/* FILE INPUT */
+.doc-box input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+/* FILE INPUT HOVER */
+.doc-box input[type="file"]:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .documents {
+    grid-template-columns: 1fr;
+  }
+}
+/* FILE INPUT CUSTOM STYLE */
+.doc-box input[type="file"] {
+  width: 100%;
   font-size: 14px;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
 }
 
-/* HOVER EFFECT */
-.course-bar label:hover {
-  background: white;
-  color: #16a34a;
+/* CUSTOM BUTTON */
+.doc-box input[type="file"]::file-selector-button {
+  background: linear-gradient(135deg, #040239, #0b063b);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 12px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-/* SELECTED STATE */
-.course-bar input[type="radio"]:checked + label {
-  background: white;
-  color: #16a34a;
-  font-weight: bold;
+/* BUTTON HOVER */
+.doc-box input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(135deg, #040239, #0b063b);
 }
-</style>
+/* PHOTO SECTION */
+.photo-box {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* PREVIEW BOX */
+.photo-preview {
+  width: 100%;
+  height: 190px;
+  border: 2px dashed rgba(255,255,255,0.7);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.photo-preview span {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.photo-preview:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.02);
+}
+
+/* FILE INPUT */
+.photo-box input[type="file"] {
+  width: 100%;
+  font-size: 13px;
+  color: white;
+  background:135deg, #040239, #0b063b;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* CUSTOM BUTTON */
+.photo-box input[type="file"]::file-selector-button {
+  background: white;
+  color: 135deg, #040239, #0b063b;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 10px;
+}
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
- <!-- HEADER / NAVBAR -->
-<div class="header">
+    <!-- HEADER / NAVBAR -->
+    <div class="header">
 
-  <!-- LOGO LEFT -->
-  <div class="logo">
-    <img src="assets/logo.jpeg" alt="logo">
+      <!-- LOGO LEFT -->
+      <div class="logo">
+        <img src="assets/logo.jpeg" alt="logo">
+      </div>
+
+      <!-- CENTER TITLE -->
+      <div class="title">
+        <h1>ASTHA AGRICULTURE ACADEMY</h1>
+        <p>📍 Behind Civil Hospital, Madhya Pradesh</p>
+      </div>
+
+      <!-- RIGHT PHOTO (UPDATED) -->
+      <!-- <div class="photo-box"> <label for="photo">📸 Upload Photo</label> <input type="file" id="photo"> </div> -->
+       <div class="photo-box">
+
+  <div class="photo-preview">
+    📷
+    <span>Upload Image</span>
   </div>
 
-  <!-- CENTER TITLE -->
-  <div class="title">
-    <h1>ASTHA AGRICULTURE ACADEMY</h1>
-    <p>📍 Civil Hospital ke peeche, Madhya Pradesh</p>
-  </div>
-
-  <!-- RIGHT PHOTO (UPDATED) -->
-  <div class="photo-box">
-    <label for="photo">📸 Upload Photo</label>
-    <input type="file" id="photo">
-  </div>
+  <input type="file" id="photo">
 
 </div>
-
-  <h2 >📝 STUDENT REGISTRATION FORM</h2>
-
-  <!-- COURSE BAR -->
-  <div class="course-bar">
-
-  <input type="radio" id="c1" name="course" value="Agriculture B.Sc">
-  <label for="c1">Agriculture B.Sc</label>
-
-  <input type="radio" id="c2" name="course" value="Nursing B.Sc">
-  <label for="c2">Nursing B.Sc</label>
-
-  <input type="radio" id="c3" name="course" value="B-Pharma">
-  <label for="c3">B-Pharma</label>
-
-  <input type="radio" id="c4" name="course" value="D-Pharma">
-  <label for="c4">D-Pharma</label>
-
-  <input type="radio" id="c5" name="course" value="B.Tech">
-  <label for="c5">B.Tech</label>
-
-</div>
-  <!-- FORM -->
-  <form>
-
-    <input type="text" name="name" placeholder="Full Name">
-    <input type="text" name="father" placeholder="Father Name">
-   <input type="text" name="address" placeholder="Address">
-
-    <div class="row">
-      <input type="date" name="dob">
-      <select name="category">
-        <option>Select Category</option>
-        <option>GEN</option>
-        <option>OBC</option>
-        <option>SC</option>
-        <option>ST</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <input type="text" name="mobile" placeholder="Mobile Number">
-<input type="text" name="whatsapp" placeholder="WhatsApp Number">
 
     </div>
 
-   <input type="email" name="email" placeholder="Email">
+    <h2>📝 STUDENT REGISTRATION FORM</h2>
 
-    <div class="row">
-      <input type="text" name="occupation" placeholder="Father Occupation">
-      <input type="text" name="fees" placeholder="Fees">
+    <!-- COURSE BAR -->
+    <div class="course-bar">
+
+      <input type="radio" id="c1" name="course" value="Agriculture B.Sc">
+      <label for="c1">Agriculture B.Sc</label>
+
+      <input type="radio" id="c2" name="course" value="Nursing B.Sc">
+      <label for="c2">Nursing B.Sc</label>
+
+      <input type="radio" id="c3" name="course" value="B-Pharma">
+      <label for="c3">B-Pharma</label>
+
+      <input type="radio" id="c4" name="course" value="D-Pharma">
+      <label for="c4">D-Pharma</label>
+
+      <input type="radio" id="c5" name="course" value="B.Tech">
+      <label for="c5">B.Tech</label>
+
     </div>
+    <!-- FORM -->
+    <form>
 
-<input type="text" name="reference" placeholder="Reference By">
-    <!-- EDUCATION -->
-    <h3>Education Details</h3>
+      <input type="text" name="name" placeholder="Full Name">
+      <input type="text" name="father" placeholder="Father Name">
+      <input type="text" name="address" placeholder="Address">
 
-    <div class="table">
-      <input name="tenthBoard" placeholder="10th Board">
-<input name="tenthYear" placeholder="10th Year">
-<input name="tenthMarks" placeholder="10th Marks">
+      <div class="row">
+        <input type="date" name="dob">
+        <select name="category">
+          <option>Select Category</option>
+          <option>GEN</option>
+          <option>OBC</option>
+          <option>SC</option>
+          <option>ST</option>
+        </select>
+      </div>
 
-<input name="twelfthBoard" placeholder="12th Board">
-<input name="twelfthYear" placeholder="12th Year">
-<input name="twelfthMarks" placeholder="12th Marks">
-</div>
+      <div class="row">
+        <input type="text" name="mobile" placeholder="Mobile Number">
+        <input type="text" name="whatsapp" placeholder="WhatsApp Number">
 
-    <!-- NEW SECTION: DOCUMENTS -->
-<h3>📂 Documents Upload</h3>
+      </div>
 
-<div class="documents">
+      <input type="email" name="email" placeholder="Email">
 
-  <div class="doc-box">
-    <label><input type="checkbox"> Aadhaar Card</label>
-    <input type="file">
+      <div class="row">
+        <input type="text" name="occupation" placeholder="Father Occupation">
+        <input type="text" name="fees" placeholder="Fees">
+      </div>
+
+      <input type="text" name="reference" placeholder="Reference By">
+      <!-- EDUCATION -->
+      <h3>Education Details</h3>
+
+      <div class="table">
+        <input name="tenthBoard" placeholder="10th Board">
+        <input name="tenthYear" placeholder="10th Year">
+        <input name="tenthMarks" placeholder="10th Marks">
+
+        <input name="twelfthBoard" placeholder="12th Board">
+        <input name="twelfthYear" placeholder="12th Year">
+        <input name="twelfthMarks" placeholder="12th Marks">
+      </div>
+
+      <!-- NEW SECTION: DOCUMENTS -->
+      <h3>📂 Documents Upload</h3>
+
+      <div class="documents">
+
+        <div class="doc-box">
+          <label><input type="checkbox"> Aadhaar Card</label>
+          <input type="file">
+        </div>
+
+        <div class="doc-box">
+          <label><input type="checkbox"> Passport Photo</label>
+          <input type="file">
+        </div>
+
+        <div class="doc-box">
+          <label><input type="checkbox"> Marksheet</label>
+          <input type="file">
+        </div>
+
+        <div class="doc-box">
+          <label><input type="checkbox"> TC</label>
+          <input type="file">
+        </div>
+
+      </div>
+
+      <button type="submit">Submit Form</button>
+
+
+
+    </form>
+
   </div>
-
-  <div class="doc-box">
-    <label><input type="checkbox"> Passport Photo</label>
-    <input type="file">
-  </div>
-
-  <div class="doc-box">
-    <label><input type="checkbox"> Marksheet</label>
-    <input type="file">
-  </div>
-
-  <div class="doc-box">
-    <label><input type="checkbox"> TC</label>
-    <input type="file">
-  </div>
-
-</div>
-
-    <button type="submit">Submit Form</button>
-
-    
-
-  </form>
-
-</div>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
